@@ -2,17 +2,25 @@
   background-color: rgb(254, 255, 190);
   border: 1px solid black;
   display: grid;
-  grid-template-areas: ;
   padding: 100px; 
 }
 ul li {
   display: inline-block;
   padding: 0 10px;
 }
+button {
+  width: 12vw !important;
+}
 .tip-calculator {
   padding: 1rem;
   width: 25vw;
   border: 1px solid black;
+}
+
+#calculator {
+  width: 30vw;
+  max-height: 30vh;
+  overflow: scroll;
 }
 @media(max-width: 640px) {
   .container {

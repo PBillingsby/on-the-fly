@@ -1,3 +1,13 @@
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.getElementById('calculator').style.display = "none"
+  document.querySelector('#add-tips').style.display = "block"
+})
+
+function addCalculator() {
+  document.getElementById('calculator').style.display = "block"
+  document.querySelector('#add-tips').style.display = "none"
+}
+
 function addWorker(value) {
   const form = document.getElementById('form-block');
   form.addEventListener("submit", () => {
