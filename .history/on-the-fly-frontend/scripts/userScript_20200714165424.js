@@ -52,8 +52,6 @@ function handleSignup() {
     },
     body: JSON.stringify(userSign)
   })
-  .then(resp => resp.json())
-  .then(user => console.log(user))
   .catch( err => {
     console.log(err)})
 }

@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
-  skip_before_action :authorized, only: [:create, :auto_login]
+  before_action :authorized, only: [:auto_login]
   def create
     @user = User.create(user_params)
     if @user.valid?
       token = encode_token({user_id: @user.id})
-      byebug
       render json: {user: @user, token: token}
     else
       render json: {error: "Invalid username or password"}

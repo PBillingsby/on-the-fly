@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  before_action :authorized, only: [:create, :auto_login]
+  before_action :authorized, only: [:create, :login] 
 
   def encode_token(payload)
     JWT.encode(payload, 's3cr3t')
