@@ -1,16 +1,25 @@
 .container {
   background-color: rgb(254, 255, 190);
-  border: 1px solid black;
   display: grid;
   padding: 100px; 
 }
-ul li {
-  display: inline-block;
-  padding: 0 10px;
-}
 button {
-  width: 12vw !important;
+  color: black !important;
+  font-weight: 700;
+  text-align: center;
 }
+
+header {
+  display: flex;
+  background-color: rgb(255, 173, 65);
+}
+/* USER HANDLING */
+.user-form {
+  float: right;
+}
+
+
+/* TIP HANDLING */
 .tip-calculator {
   padding: 1rem;
   width: 25vw;
