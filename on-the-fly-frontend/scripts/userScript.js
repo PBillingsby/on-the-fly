@@ -33,7 +33,7 @@ function handleLogin() {
     body: JSON.stringify(userLog)
   })
   .then(resp => resp.json())
-  .then(obj => console.log(obj))
+  .then(user => usernameBar(user.username))
 }
 
 // Sends to sessions controller
@@ -53,7 +53,22 @@ function handleSignup() {
     body: JSON.stringify(userSign)
   })
   .then(resp => resp.json())
-  .then(user => console.log(user))
+  .then(user => usernameBar(user.username))
   .catch( err => {
     console.log(err)})
+}
+
+function usernameBar(name) {
+  document.querySelector('#user-form').innerHTML = `<p>Welcome, ${name}</p><a href="" onclick="logout()">log out</a>`
+}
+
+function logout(){
+  event.preventDefault()
+  fetch('http://localhost:3000/logout', {
+    method: 'DELETE',
+    headers: {
+      'Content-Type':'application/json',
+      'Accept':'application/json'
+    }
+  })
 }

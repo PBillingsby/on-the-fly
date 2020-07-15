@@ -54,5 +54,5 @@ function returnTips(arr, cashTips) {
 }
 
 function refreshPage() {
-  window.location.href = window.location.href
+  document.getElementById('results').load(document.URL +  ' #results')
 }
