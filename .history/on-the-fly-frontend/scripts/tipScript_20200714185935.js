@@ -10,7 +10,6 @@ function addCalculator() {
 
 function addWorker(value) {
   const form = document.getElementById('form-block');
-  form.innerHTML = "";
   form.addEventListener("submit", () => {
     event.preventDefault();
   })
@@ -27,8 +26,11 @@ function addWorker(value) {
   </div>`;
     document.getElementById('form-block').innerHTML += newForm;
   }
+  if (document.getElementById('form-block').childNodeCount > 0) {
+    document.getElementById('form-block').innerHTML = ""
+      event.preventDefault();
+      }
 }
-
 
 function calculateTips() {
   let workers = [];

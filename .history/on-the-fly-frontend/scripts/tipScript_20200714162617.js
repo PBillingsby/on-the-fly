@@ -10,7 +10,6 @@ function addCalculator() {
 
 function addWorker(value) {
   const form = document.getElementById('form-block');
-  form.innerHTML = "";
   form.addEventListener("submit", () => {
     event.preventDefault();
   })
@@ -27,8 +26,10 @@ function addWorker(value) {
   </div>`;
     document.getElementById('form-block').innerHTML += newForm;
   }
+  if (document.getElementById('form-block').childNodeCount > 0) {
+      event.preventDefault();
+      }
 }
-
 
 function calculateTips() {
   let workers = [];
@@ -48,7 +49,7 @@ function returnTips(arr, cashTips) {
   arr.forEach(obj => count += obj.hours)
   const hourly = cashTips / count;
   arr.forEach(worker => {
-    document.getElementById('results').innerHTML += `<h4>${worker.name} you made $${parseFloat(worker.hours * hourly).toFixed(2)}</h4>`;
+    document.getElementById('results').innerHTML = `<h4>${worker.name} you made $${parseFloat(worker.hours * hourly).toFixed(2)}</h4>`;
   })
   document.getElementById('results').innerHTML += ` <button type="submit" onclick="refreshPage()">Reload</button>`
 }
